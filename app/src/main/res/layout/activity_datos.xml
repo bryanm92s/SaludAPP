@@ -14,7 +14,8 @@
         android:textAlignment="center"
         android:textSize="@dimen/tamano_letra"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
+        android:gravity="center"
+
         />
 
 </RelativeLayout>

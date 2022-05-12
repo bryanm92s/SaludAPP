@@ -14,8 +14,10 @@ class Datos : AppCompatActivity() {
         // Recuperar información
 
         val ObjetoIntent:Intent=intent
-        var Nombre=ObjetoIntent.getStringExtra("Nombre")
-        var Apellido=ObjetoIntent.getStringExtra("Apellido")
-        txtSaludo.text="Hola, bienvenido $Nombre $Apellido"
+        val Nombre=ObjetoIntent.getStringExtra("Nombre")
+        val Apellido=ObjetoIntent.getStringExtra("Apellido")
+        val Edad = ObjetoIntent.getStringExtra("Edad")
+        val Correo = ObjetoIntent.getStringExtra("Correo")
+        txtSaludo.text="Bienvenido $Nombre $Apellido, la edad ingresada es: $Edad años, su correo electrónico es: $Correo"
     }
 }
