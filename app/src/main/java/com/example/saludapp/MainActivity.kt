@@ -14,18 +14,31 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnAceptar.setOnClickListener {
+        btnEnviar.setOnClickListener {
+
+            val checkedGeneroRadioButtonId=rg_genero.checkedRadioButtonId
+            val Gen=findViewById<RadioButton>(checkedGeneroRadioButtonId)
+            val Genero=Gen.text
 
             val Nombre:String=editNombre.text.toString()
             val Apellido:String=editApellido.text.toString()
             val Edad:String=editEdad.text.toString()
             val Correo:String=editCorreo.text.toString()
 
-            val intent: Intent=Intent(this, Datos::class.java)
+            //Checkbox
+            val Android =cbAndroid.isChecked
+            val Csharp = cbCsharp.isChecked
+            val Js =cbJavascript.isChecked
+
+            var Lenguaje = if (Android) { "Android " } else { "" }+ if(Csharp){ "C# " }else{ "" }+ if(Js){ "Javascript " }else{ "" }
+
+            val intent: Intent=Intent(this@MainActivity, Datos::class.java)
             intent.putExtra("Nombre", Nombre)
             intent.putExtra("Apellido", Apellido)
             intent.putExtra("Edad",Edad)
             intent.putExtra("Correo", Correo)
+            intent.putExtra("Genero", Genero)
+            intent.putExtra("Lenguaje", Lenguaje)
             startActivity(intent)
         }
     }

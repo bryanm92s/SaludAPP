@@ -10,11 +10,11 @@
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/espacio_top"
         android:text="@string/titulo"
         android:textSize="@dimen/tamano_letra"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        />
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,10 @@
             android:id="@+id/editNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/espacio_top"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="@string/nombre"
             android:inputType="text"
             android:minHeight="48dp" />
@@ -36,7 +39,10 @@
             android:id="@+id/editApellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/espacio_top"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="@string/apellido"
             android:inputType="text"
             android:minHeight="48dp" />
@@ -46,7 +52,10 @@
             android:id="@+id/editEdad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/espacio_top"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="@string/edad"
             android:inputType="number"
             android:minHeight="48dp" />
@@ -55,16 +64,74 @@
             android:id="@+id/editCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="@dimen/espacio_top"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/rounded_edittext"
             android:hint="@string/correo"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
+        <RadioGroup
+            android:id="@+id/rg_genero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_masc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/rbMasc" />
+
+            <RadioButton
+                android:id="@+id/rb_fem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rbFem" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/lenguajes" />
+
+        <CheckBox
+            android:id="@+id/cbAndroid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/android" />
+
+        <CheckBox
+            android:id="@+id/cbCsharp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/csharp" />
+
+        <CheckBox
+            android:id="@+id/cbJavascript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/js" />
+
         <Button
-            android:id="@+id/btnAceptar"
+            android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/aceptar" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/enviar" />
     </LinearLayout>
 
 </RelativeLayout>

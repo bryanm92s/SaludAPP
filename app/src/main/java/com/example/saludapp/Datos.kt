@@ -18,6 +18,15 @@ class Datos : AppCompatActivity() {
         val Apellido=ObjetoIntent.getStringExtra("Apellido")
         val Edad = ObjetoIntent.getStringExtra("Edad")
         val Correo = ObjetoIntent.getStringExtra("Correo")
-        txtSaludo.text="Bienvenido $Nombre $Apellido, la edad ingresada es: $Edad años, su correo electrónico es: $Correo"
+        val Genero = ObjetoIntent.getStringExtra("Genero")
+        val Lenguaje = ObjetoIntent.getStringExtra("Lenguaje")
+
+        edNombres.setText(Nombre)
+        edApellidos.setText(Apellido)
+        edEdad.setText(Edad)
+        edCorreo.setText(Correo)
+        edGenero.setText(Genero)
+        edLenguaje.setText(Lenguaje)
+        //txtSaludo.text="Bienvenido $Nombre $Apellido, la edad ingresada es: $Edad años, su correo electrónico es: $Correo, su género es: $Genero, Lenguaje(s) preferidos:\n$Lenguaje\n"
     }
 }
