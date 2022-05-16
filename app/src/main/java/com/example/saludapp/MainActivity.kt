@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         btnEnviar.setOnClickListener {
 
+
             val checkedGeneroRadioButtonId=rg_genero.checkedRadioButtonId
             val Gen=findViewById<RadioButton>(checkedGeneroRadioButtonId)
             val Genero=Gen.text
@@ -30,16 +31,37 @@ class MainActivity : AppCompatActivity() {
             val Csharp = cbCsharp.isChecked
             val Js =cbJavascript.isChecked
 
-            var Lenguaje = if (Android) { "Android " } else { "" }+ if(Csharp){ "C# " }else{ "" }+ if(Js){ "Javascript " }else{ "" }
+            if (Nombre.isEmpty()){
+                Toast.makeText(this, "Campo nombre vacío", Toast.LENGTH_SHORT).show()
+            }else{
+                if (Apellido.isEmpty()){
+                    Toast.makeText(this, "Campo apellido vacío", Toast.LENGTH_SHORT).show()
+                }else{
+                    if (Edad.isEmpty()){
+                        Toast.makeText(this, "Campo edad vacío",Toast.LENGTH_SHORT).show()
+                    }else{
+                        if(Correo.isEmpty()){
+                            Toast.makeText(this,"Campo correo vacío",Toast.LENGTH_SHORT).show()
+                        }else{
+                            if (!cbAndroid.isChecked && !cbCsharp.isChecked && !cbJavascript.isChecked){
+                                Toast.makeText(this,"Debe seleccionar al menos un lenguaje preferido", Toast.LENGTH_SHORT).show()
+                            }else{
+                                val Lenguaje = if (Android) { "Android " } else { "" }+ if(Csharp){ "C# " }else{ "" }+ if(Js){ "Javascript " }else{ "" }
+                                val intent: Intent=Intent(this@MainActivity, Datos::class.java)
+                                intent.putExtra("Nombre", Nombre)
+                                intent.putExtra("Apellido", Apellido)
+                                intent.putExtra("Edad",Edad)
+                                intent.putExtra("Correo", Correo)
+                                intent.putExtra("Genero", Genero)
+                                intent.putExtra("Lenguaje", Lenguaje)
+                                startActivity(intent)
+                            }
+                        }
+                    }
+                }
+            }
 
-            val intent: Intent=Intent(this@MainActivity, Datos::class.java)
-            intent.putExtra("Nombre", Nombre)
-            intent.putExtra("Apellido", Apellido)
-            intent.putExtra("Edad",Edad)
-            intent.putExtra("Correo", Correo)
-            intent.putExtra("Genero", Genero)
-            intent.putExtra("Lenguaje", Lenguaje)
-            startActivity(intent)
+
         }
     }
 }
